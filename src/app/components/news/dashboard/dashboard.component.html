@@ -1,0 +1,107 @@
+<header>
+    <div id="sidebar">
+        <div id="close" (click)="closeMenu($event)">
+            <a href="#"><i class="fa-solid fa-xmark"></i></a>
+        </div>
+
+        <div id="items-list">
+            <div id="items"><a routerLink="/news">Home</a></div>
+            <div id="items">
+                <div class="btn-group">
+                    <a *ngIf="isLoggedIn" class="dropdown-toggle" data-bs-toggle="dropdown"
+                        aria-expanded="false">{{selectedCategory}}</a>
+                    <ul class="dropdown-menu custom-dropdown-menu">
+                        <li><a class="dropdown-item" (click)="selectCategory('general')">General</a></li>
+                        <li><a class="dropdown-item" (click)="selectCategory('business')">Business</a></li>
+                        <li><a class="dropdown-item" (click)="selectCategory('technology')">Technology</a></li>
+                        <li><a class="dropdown-item" (click)="selectCategory('sports')">Sports</a></li>
+                        <li><a class="dropdown-item" (click)="selectCategory('health')">Health</a></li>
+                        <li><a class="dropdown-item" (click)="selectCategory('science')">Science</a></li>
+                        <li><a class="dropdown-item" (click)="selectCategory('entertainment')">Entertainment</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="items">
+                <div class="btn-group">
+                    <a *ngIf="isLoggedIn" class="dropdown-toggle" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        {{selectedCountry}}
+                    </a>
+                    <ul class="dropdown-menu custom-dropdown-menu">
+                        <li *ngFor="let country of countries">
+                            <a class="dropdown-item" (click)="selectCountry(country)">{{ country.name }}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="items"><a routerLink="/allnews">All News</a></div>
+            <div id="items"><a routerLink="/savedarticle">Saved Articles</a></div>
+            <div id="items"><a routerLink="/profile">Profile</a></div>
+            <div id="items"><a href="#" (click)="logout()">Log Out</a></div>
+        </div>
+    </div>
+
+    <div class="logo">
+        <i *ngIf="isLoggedIn" class="fa-solid fa-bars bars" (click)="openMenu($event)"></i>
+        <a *ngIf="isLoggedIn" class="home"><i class="fa-solid fa-house" routerLink="/news"></i></a>
+        <p  class="web-name"><img src="../../../../assets/img/rev news logo.png" alt="Logo"></p>
+    </div>
+    <div class="search-bar flex">
+        <div>
+            <!-- <a *ngIf="isLoggedIn" routerLink="/allnews">All News</a> -->
+            <button *ngIf="isLoggedIn" routerLink="/allnews" class="btn btn-primary btn-sm custom-color allnews" (click)="showFilters = false" [disabled]="!showFilters" >All News</button>
+        </div>
+        <input *ngIf="isLoggedIn" id="search-text" type="text" class="search-text" [(ngModel)]="searchQuery"
+            placeholder="eg.sports...">
+        <button *ngIf="isLoggedIn" id="search-button" class="search-button" (click)="searchNews()"><i
+                class="fa-solid fa-magnifying-glass"></i></button>
+        <div class="dropdown-group">
+            <div class="btn btn-group">
+                <button *ngIf="isLoggedIn" type="button" class="btn btn-primary btn-sm dropdown-toggle custom-color"
+                    data-bs-toggle="dropdown" aria-expanded="false" [disabled]="!showFilters">{{selectedCategory}}</button>
+                <ul class="dropdown-menu"  >
+                    <li><a class="dropdown-item" (click)="selectCategory('general')" >General</a></li>
+                    <li><a class="dropdown-item" (click)="selectCategory('business')">Business</a></li>
+                    <li><a class="dropdown-item" (click)="selectCategory('technology')">Technology</a></li>
+                    <li><a class="dropdown-item" (click)="selectCategory('sports')">Sports</a></li>
+                    <li><a class="dropdown-item" (click)="selectCategory('health')">Health</a></li>
+                    <li><a class="dropdown-item" (click)="selectCategory('science')">Science</a></li>
+                    <li><a class="dropdown-item" (click)="selectCategory('entertainment')">Entertainment</a></li>
+                </ul>
+            </div>
+            <div class="btn-group">
+                <button *ngIf="isLoggedIn" type="button" class="btn btn-primary btn-sm dropdown-toggle custom-color"
+                    data-bs-toggle="dropdown" aria-expanded="false"  [disabled]="!showFilters">
+                    {{selectedCountry}}
+                </button>
+                <ul class="dropdown-menu custom-dropdown-menu">
+                    <li *ngFor="let country of countries">
+                        <a class="dropdown-item" (click)="selectCountry(country)">{{ country.name }}</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- <div class="btn-group">
+                <button *ngIf="isLoggedIn" type="button" class="btn btn-primary btn-sm dropdown-toggle custom-color"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Sort By
+                </button>
+                <select [(value)]="sortBy" (selectionChange)="selectSortBy($event.value)">
+                    <option value="popularity">Popular</option>
+                    <option value="relevancy">Relevant</option>
+                    <option value="publishedAt">Published At</option>
+                </select>
+            </div> -->
+        </div>
+        <div>
+            <a *ngIf="isLoggedIn" class="nav-icon" routerLink="/savedarticle"><i class="fa-solid fa-bookmark"></i></a>
+            <a *ngIf="isLoggedIn" class="nav-icon"><i class="fa-solid fa-user" routerLink="/profile"></i></a>
+            <button *ngIf="!isLoggedIn" class="btn btn-primary btn-sm custom-color login"
+                routerLink="/login">Login</button>
+            <a *ngIf="isLoggedIn" class="nav-icon"><i class="fa-solid fa-right-from-bracket" (click)="logout()"></i></a>
+        </div>
+    </div>
+</header>
+
+<footer>
+    <p>RevNews &#169; Copyrights 2023</p>
+</footer>

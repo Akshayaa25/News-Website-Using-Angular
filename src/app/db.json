@@ -1,0 +1,58 @@
+{
+  "users": [
+    {
+      "__typename": "User",
+      "id": 1,
+      "firstName": "Akshayaa",
+      "lastName": "D",
+      "email": "akshayaa2509@gmail.com",
+      "password": "Aksh@259",
+      "phone": "6304658521",
+      "country": "India"
+    },
+    {
+      "id": "2",
+      "firstName": "Roheeth",
+      "lastName": "",
+      "email": "roheeth2000@gmail.com",
+      "password": "Roheeth@1234",
+      "phone": "",
+      "country": "Japan",
+      "__typename": "User"
+    }
+  ],
+  "savedArticles": [
+    {
+      "email": "akshayaa2509@gmail.com",
+      "savedArticles": [
+        {
+          "source": {
+            "id": null,
+            "name": "NDTV News"
+          },
+          "author": null,
+          "title": "7.4 Magnitude Earthquake Near US' Alaska, Tsunami Warning Issued - NDTV",
+          "description": "A massive 7.4 magnitude earthquake today struck the Alaska Peninsula region, according to the United States Geological Survey",
+          "url": "https://www.ndtv.com/world-news/7-4-magnitude-earthquake-near-us-alaska-tsunami-warning-issued-4211919",
+          "urlToImage": "https://i.ndtvimg.com/i/2017-09/earthquake-generic_650x400_71505899871.jpg",
+          "publishedAt": "2023-07-16T07:11:36Z",
+          "content": "New Delhi: A massive 7.4 magnitude earthquake today struck the Alaska Peninsula region, according to the United States Geological Survey (USGS). A tsunami warning was issued for some areas of the US … [+790 chars]"
+        },
+        {
+          "source": {
+            "id": null,
+            "name": "The Guardian"
+          },
+          "author": "Samuel Gibbs",
+          "title": "Sustainable smartphones calling? The eco-friendly new design rules to extend the life of your handset",
+          "description": "EU legislation will herald greener devices, with greater longevity for software and access to user-replaceable parts The current status quo of smartphone design, repair and longevity could finally be upended in favour of users – and the planet. That is the me…",
+          "url": "https://www.theguardian.com/technology/2023/jul/15/sustainable-smartphones-calling-the-eco-friendly-new-design-rules-to-extend-the-life-of-your-handset",
+          "urlToImage": "https://i.guim.co.uk/img/media/ec3c5940512deaf29975a90fab1a01c8bde8187f/0_140_2763_1659/master/2763.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdG8tZGVmYXVsdC5wbmc&enable=upscale&s=6003b7c45de6a3c602353cf6e77e4e24",
+          "publishedAt": "2023-07-15T14:00:32Z",
+          "content": "The current status quo of smartphone design, repair and longevity could finally be upended in favour of users and the planet. That is the message from campaign groups on the landmark overhaul of rule… [+7068 chars]"
+        }
+      ],
+      "id": 1
+    }
+  ]
+}

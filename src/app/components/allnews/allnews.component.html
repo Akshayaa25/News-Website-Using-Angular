@@ -1,0 +1,89 @@
+<app-dashboard></app-dashboard>
+
+<div class="date">
+    <mat-card class="date-picker">
+        <mat-card-content>
+            <mat-form-field appearance="outline">
+                <mat-label>From Date</mat-label>
+                <input matInput [matDatepicker]="fromDatePicker" [(ngModel)]="fromDate"
+                    (ngModelChange)="fromDateChange($event)" placeholder="Choose a date" [max]="maxFromDate">
+                <mat-datepicker-toggle matSuffix [for]="fromDatePicker"></mat-datepicker-toggle>
+                <mat-datepicker #fromDatePicker></mat-datepicker>
+            </mat-form-field>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card class="date-picker">
+        <mat-card-content>
+            <mat-form-field appearance="outline">
+                <mat-label>Sort By</mat-label>
+                <mat-select [(value)]="sortBy" (selectionChange)="selectSortBy($event.value)">
+                    <mat-option value="popularity">Popular</mat-option>
+                    <mat-option value="relevancy">Relevant</mat-option>
+                    <mat-option value="publishedAt">Published At</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card class="date-picker">
+        <mat-card-content>
+            <mat-form-field appearance="outline">
+                <mat-label>To Date</mat-label>
+                <input matInput [matDatepicker]="toDatePicker" [(ngModel)]="toDate" (ngModelChange)="toDateChange($event)"
+                    placeholder="Choose a date" [max]="maxDate">
+                <mat-datepicker-toggle matSuffix [for]="toDatePicker"></mat-datepicker-toggle>
+                <mat-datepicker #toDatePicker></mat-datepicker>
+            </mat-form-field>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+<div class="whole-container">
+    <h2 class="category-name">All News</h2>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4" *ngFor="let article of paginatedNews">
+                <mat-card class="news-card">
+                    <div class="source">
+                        {{ article.source.name || "null" }}
+                    </div>
+                    <div class="image-container">
+                        <a href="{{ article.url }}" target="_blank"><img mat-card-image [src]="article.urlToImage || '../../../../assets/img/default news.jpg'"
+                            [alt]="article.title" /></a>
+                    </div>
+
+                    <mat-card-content>
+                        <mat-card-title class="title">
+                           <a href="{{ article.url }}" target="_blank"> {{ article.title | slice : 0 : 60 }}</a>
+                        </mat-card-title>
+                        <mat-card-subtitle class="author">
+                            <p> Author: {{ article.author || "null" }}</p>
+                        </mat-card-subtitle>
+                        <!-- <mat-card-subtitle class="source">
+                            <p>Source: {{ article.source.name || "null" }}</p>
+                        </mat-card-subtitle> -->
+                        <mat-card-subtitle class="published-at">
+                            <p> publishedAt:{{ article.publishedAt | date: 'dd MMM yyyy HH.mm.ss' }}</p>
+                        </mat-card-subtitle>
+                        <p class="description">{{ article.description }}</p>
+                    </mat-card-content>
+
+                    <mat-card-actions class="actions">
+                        <a href="{{ article.url }}" target="_blank" class="readmore">Read More</a>
+                        <i (click)="saveArticle(article)" class="fa-solid fa-bookmark"></i>
+                        <i (click)="openShareDialog(article)" class="fa-solid fa-share"></i>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+
+    <div class="pagination">
+        <mat-card class="pagination-card">
+            <mat-paginator [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" [length]="news.length"
+            (page)="onPageChange($event)"></mat-paginator>
+        </mat-card>
+    </div>
+</div>

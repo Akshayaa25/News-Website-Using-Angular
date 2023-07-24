@@ -1,0 +1,28 @@
+.dialog-title {
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 2px;
+  }
+  
+  .dialog-content {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .dialog-text {
+    font-size: 16px;
+  }
+  
+  .dialog-buttons {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .dialog-buttons button {
+    margin-right: 10px;
+  }
+  
+  #delete-btn{
+    background-color: rgb(36, 94, 180);
+    color: white;
+  }

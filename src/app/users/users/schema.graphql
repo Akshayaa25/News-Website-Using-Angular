@@ -1,0 +1,18 @@
+type User{
+id:Int!
+firstName:String!
+lastName:String!
+email:String!
+password:String!
+confirmPassword:String!
+country:String!
+}
+
+type mutation{
+login(email:String!,password:String!)
+}
+
+schema{
+query: Query
+mutation:mutation
+}

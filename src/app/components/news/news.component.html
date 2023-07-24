@@ -1,0 +1,48 @@
+<app-dashboard></app-dashboard>
+
+<div class="whole-container">
+    <h2 class="category-name">{{ getCategoryDisplayName() }}</h2>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4" *ngFor="let article of filteredNews">
+                <mat-card class="news-card">
+                    <div class="source">
+                        <p> {{ article.source.name || "null" }}</p>
+
+                    </div>
+                    <div class="image-container">
+                        <a href="{{article.url }}" target="_blank"><img mat-card-image [src]="article.urlToImage || '../../../../assets/img/default news.jpg'"
+                            [alt]="article.title" /></a>
+                    </div>
+                    <mat-card-content>
+                        <mat-card-title class="title">
+                           <a href="{{article.url }}" target="_blank"> {{ article.title | slice : 0 : 60 }}</a>
+                        </mat-card-title>
+                        <mat-card-subtitle class="author">
+                            <p> Author : {{ article.author || "null" }}</p>
+                        </mat-card-subtitle>
+                        <!-- <mat-card-subtitle class="source">
+                            <p>Source : {{ article.source.name || "null" }}</p>
+                        </mat-card-subtitle> -->
+                        <mat-card-subtitle class="published-at">
+                            <p> publishedAt : {{article.publishedAt | date: 'dd MMM yyyy HH.mm.ss' }}</p>
+                        </mat-card-subtitle>
+                        <p class="description">{{ article.description }}</p>
+                    </mat-card-content>
+                    <mat-card-actions class="actions">
+                        <a href="{{ article.url }}" target="_blank" class="readmore">Read More</a>
+                        <i (click)="saveArticle(article)" class="fa-solid fa-bookmark"></i>
+                        <i (click)="openShareDialog(article)" class="fa-solid fa-share"></i>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="pagination">
+        <mat-card class="pagination-card">
+            <mat-paginator [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" [length]="filteredNews.length"
+            (page)="onPageChange($event)"></mat-paginator>
+        </mat-card>
+    </div> -->
+</div>

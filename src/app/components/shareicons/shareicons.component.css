@@ -1,0 +1,18 @@
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .share-buttons {
+    display: flex;
+    justify-content: center;
+  }
+
+  .close-Button{
+    background-color: #57585abd;
+    color: white;
+    margin-left: 45%;
+  }
+  

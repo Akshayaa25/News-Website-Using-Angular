@@ -1,0 +1,37 @@
+<h2 class="dialog-title mat-title">Update Profile</h2>
+<form (submit)="updateUser()" #updateForm="ngForm" class="update-form">
+  <div>
+    <mat-form-field>
+      <mat-label>First Name</mat-label>
+      <input matInput type="text" id="firstName" name="firstName" [(ngModel)]="updatedUser.firstName" required />
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <mat-label>Last Name</mat-label>
+      <input matInput type="text" id="lastName" name="lastName" [(ngModel)]="updatedUser.lastName"  />
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput type="email" id="email" name="email" [(ngModel)]="updatedUser.email" required />
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <mat-label>Phone</mat-label>
+      <input matInput type="text" id="phone" name="phone" [(ngModel)]="updatedUser.phone"  />
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <mat-label>Country</mat-label>
+      <input matInput type="text" id="country" name="country" [(ngModel)]="updatedUser.country" required />
+    </mat-form-field>
+  </div>
+  <div class="dialog-buttons">
+    <button mat-raised-button id="update" type="submit">Update</button>
+    <button mat-raised-button id="cancel" type="button" (click)="closeDialog()">Cancel</button>
+  </div>
+</form>

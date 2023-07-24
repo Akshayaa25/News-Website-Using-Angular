@@ -1,0 +1,121 @@
+<header>
+    <h1 class="logo">
+        <div class="web-name"><img src="../../../../assets/img/rev news logo.png" alt="Logo"></div>
+    </h1>
+</header>
+
+<div class="container-fluid">
+    <h1 class="title">Welcome to Rev News</h1>
+    <div class="body mb-4">
+        <img src="../../../../assets/img/image gif.gif" class="gif">
+        <div class="form-container">
+            <h1 class="display-4 text-center">Register here!</h1>
+            <form [formGroup]="form" (ngSubmit)="create()">
+                <div class="row mb-3">
+                    <div class="col">
+                        <input type="text" id="firstName" placeholder="First Name" formControlName="firstName" class="form-control">
+                        <div *ngIf="registrationFormControl['firstName'].touched && registrationFormControl['firstName'].invalid" class="error">
+                            <ng-container *ngIf="registrationFormControl['firstName'].hasError('required')">
+                                First Name is required
+                            </ng-container>
+                            <ng-container *ngIf="registrationFormControl['firstName'].hasError('minlength')">
+                                First Name should be at least 3 characters
+                            </ng-container>
+                            <ng-container *ngIf="registrationFormControl['firstName'].hasError('pattern')">
+                                First Name should start with an alphabet and contain only alphanumeric characters
+                            </ng-container>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <input type="text" id="lastName" placeholder="Last Name (Optional)" formControlName="lastName" class="form-control">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <input type="text" id="email" placeholder="Email" formControlName="email" class="form-control">
+                    <div *ngIf="registrationFormControl['email'].touched && registrationFormControl['email'].invalid" class="error">
+                        <ng-container *ngIf="registrationFormControl['email'].hasError('required')">
+                            Email is required
+                        </ng-container>
+                        <ng-container *ngIf="registrationFormControl['email'].hasError('email')">
+                            Invalid email format
+                        </ng-container>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <input type="text" id="phone" placeholder="Phone Number (Optional)" formControlName="phone" class="form-control">
+                    <div *ngIf=" registrationFormControl['phone'].invalid" class="error">
+                        <ng-container *ngIf="registrationFormControl['phone'].hasError('pattern')">
+                            Invalid phone number
+                        </ng-container>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col">
+                        <div class="password-toggle">
+                            <input type="{{ showPassword ? 'text' : 'password' }}" id="password" placeholder="Password" formControlName="password" class="form-control">
+                            <span class="toggle-icon" (click)="togglePasswordVisibility()">
+                                <i class="fa-solid fa-eye" *ngIf="!showPassword"></i>
+                                <i class="fa-solid fa-eye-slash" *ngIf="showPassword"></i>
+                            </span>
+                        </div>
+                        <div *ngIf="registrationFormControl['password'].touched && registrationFormControl['password'].invalid" class="error">
+                            <ng-container *ngIf="registrationFormControl['password'].hasError('required')">
+                                Password is required
+                            </ng-container>
+                            <ng-container *ngIf="registrationFormControl['password'].hasError('minlength')">
+                                Password should be at least 8 characters
+                            </ng-container>
+                            <ng-container *ngIf="registrationFormControl['password'].hasError('pattern')">
+                                Password should contain at least 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character
+                            </ng-container>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="password-toggle">
+                            <input type="{{ showConfirmPassword? 'text' : 'password' }}" id="confirmPassword" placeholder="Confirm Password" formControlName="confirmPassword" class="form-control">
+                            <span class="toggle-icon" (click)="toggleConfirmPasswordVisibility()">
+                                <i class="fa-solid fa-eye" *ngIf="!showConfirmPassword"></i>
+                                <i class="fa-solid fa-eye-slash" *ngIf="showConfirmPassword"></i>
+                            </span>
+                        </div>
+                        <div *ngIf="registrationFormControl['confirmPassword'].touched && registrationFormControl['confirmPassword'].invalid" class="error">
+                            <ng-container *ngIf="registrationFormControl['confirmPassword'].hasError('required')">
+                                Confirm Password is required
+                            </ng-container>
+                            <ng-container *ngIf="registrationFormControl['confirmPassword'].hasError('match')">
+                                Passwords do not match
+                            </ng-container>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <select id="country" formControlName="country" class="form-select custom-dropdown-menu">
+                        <option value="" disabled selected>Select a country</option>
+                        <option *ngFor="let country of countries" [value]="country.name">{{ country.name }}</option>
+                    </select>
+                    <div *ngIf="registrationFormControl['country'].touched && !registrationFormControl['country'].value && registrationFormControl['country'].value !== userCountry" class="error">
+                        Country is required
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="d-flex justify-content-center mb-3">
+                    <button type="submit" [disabled]="form.invalid" class="btn btn-primary w-100 custom-color">Register</button>
+                </div>
+
+                <div class="d-flex justify-content-center text-center">
+                    <p>Already have an account? <a routerLink="/login">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>RevNews &#169; Copyrights 2023</p>
+</footer>

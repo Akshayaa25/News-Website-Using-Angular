@@ -1,0 +1,216 @@
+.error {
+    font-size: 10px;
+    color: red;
+}
+
+header {
+    width: 100%;
+    height: 70px;
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+}
+
+.logo {
+    width: auto;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.web-name img {
+    width: auto;
+    height: 45px;
+}
+
+.container-fluid {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+}
+
+.body {
+    width: 80%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    background-color: #fbfbfb;
+}
+
+.gif {
+    width: 60%;
+    height: auto;
+    background-color: brown;
+}
+
+.form-container {
+    width: 40%;
+    height: auto;
+    background-color: #fbfbfb;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: auto auto;
+
+}
+
+.form-control,
+.form-select {
+    background-color: #f4f4f4;
+    border: none;
+    border-left: 2px solid rgb(36, 94, 180);
+    box-shadow: none;
+    border-radius: 1px;
+}
+
+.password-toggle {
+    position: relative;
+}
+
+.toggle-icon {
+    position: absolute;
+    top: 45%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.toggle-icon i {
+    font-size: 12px;
+    color: grey;
+}
+
+.custom-dropdown-menu {
+    max-height: 100px;
+    overflow-y: auto;
+    white-space: nowrap;
+}
+
+.custom-dropdown-menu::-webkit-scrollbar {
+    width: 10px;
+}
+
+.custom-dropdown-menu::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 5px;
+}
+
+.custom-dropdown-menu::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+.custom-dropdown-menu::-webkit-scrollbar-track {
+    background-color: #eee;
+    border-radius: 5px;
+}
+
+.custom-color {
+    background-color: rgb(36, 94, 180);
+}
+
+footer {
+    width: 100%;
+    font-size: 12px;
+    background-color: #102039;
+    background-color: black;
+    color: white;
+    font-family: sans-serif;
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+}
+
+footer p {
+    margin: 9px;
+    text-align: center;
+    opacity: 0.5;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .form-control,
+    .form-select,
+    button,
+    p {
+        font-size: 12px;
+    }
+
+    .toggle-icon i {
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    .row {
+        grid-template-columns: auto;
+        gap: 16px;
+    }
+
+    .col {
+        margin: auto;
+    }
+}
+
+@media (max-width: 1024px) {
+    header {
+        height: 40px;
+    }
+
+    .web-name img {
+        height: 30px;
+    }
+
+    .gif {
+        display: none;
+    }
+
+    .form-container {
+        width: 100%;
+    }
+   
+
+    .body {
+        width: 100%;
+        justify-content: center;
+    }
+
+    footer {
+        font-size: 8px;
+    }
+
+    footer p {
+        margin: 3px;
+    }
+}
+
+/* Desktops and larger */
+@media (max-width: 1200px) {
+    .gif {
+        width: 50%;
+        object-fit: cover;
+    }
+
+    .form-container {
+        width: 50%;
+    }
+}
