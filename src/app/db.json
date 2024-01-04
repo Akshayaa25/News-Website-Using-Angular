@@ -7,7 +7,7 @@
       "lastName": "D",
       "email": "akshayaa2509@gmail.com",
       "password": "Aksh@259",
-      "phone": "6304658521",
+      "phone": "6304658522",
       "country": "India"
     },
     {
@@ -50,6 +50,19 @@
           "urlToImage": "https://i.guim.co.uk/img/media/ec3c5940512deaf29975a90fab1a01c8bde8187f/0_140_2763_1659/master/2763.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdG8tZGVmYXVsdC5wbmc&enable=upscale&s=6003b7c45de6a3c602353cf6e77e4e24",
           "publishedAt": "2023-07-15T14:00:32Z",
           "content": "The current status quo of smartphone design, repair and longevity could finally be upended in favour of users and the planet. That is the message from campaign groups on the landmark overhaul of rule… [+7068 chars]"
+        },
+        {
+          "source": {
+            "id": "engadget",
+            "name": "Engadget"
+          },
+          "author": "Mariella Moon",
+          "title": "Google and Match Group settle antitrust case before it goes to trial",
+          "description": "The antitrust lawsuit Epic Games and Match Group have filed against Google was supposed to go to trial on November 6, but now it looks like the video game developer might go at it alone. Google and Match, the parent company of Tinder, OkCupid and Hinge, have …",
+          "url": "https://www.engadget.com/google-and-match-group-settle-antitrust-case-before-it-goes-to-trial-041158809.html",
+          "urlToImage": "https://s.yimg.com/ny/api/res/1.2/2.umw5DEZTxqv1czt7En9A--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04MDA-/https://s.yimg.com/os/creatr-uploaded-images/2023-10/871dbd80-7864-11ee-9f3f-9642d3093703",
+          "publishedAt": "2023-11-01T04:11:58Z",
+          "content": "The antitrust lawsuit Epic Games and Match Group have filed against Google was supposed to go to trial on November 6, but now it looks like the video game developer might go at it alone. Google and M… [+2505 chars]"
         }
       ],
       "id": 1

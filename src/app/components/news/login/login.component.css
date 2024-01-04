@@ -22,9 +22,10 @@ header {
     align-items: center;
 }
 
-.web-name img {
-    width: auto;
-    height: 45px;
+.web-name {
+    font-size: 28px;
+    font-weight: 500;
+    font-family:cursive;
 }
 
 .password-toggle {

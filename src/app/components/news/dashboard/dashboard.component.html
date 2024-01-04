@@ -44,7 +44,7 @@
     <div class="logo">
         <i *ngIf="isLoggedIn" class="fa-solid fa-bars bars" (click)="openMenu($event)"></i>
         <a *ngIf="isLoggedIn" class="home"><i class="fa-solid fa-house" routerLink="/news"></i></a>
-        <p  class="web-name"><img src="../../../../assets/img/rev news logo.png" alt="Logo"></p>
+        <div class="web-name">News Hub</div>
     </div>
     <div class="search-bar flex">
         <div>
@@ -103,5 +103,5 @@
 </header>
 
 <footer>
-    <p>RevNews &#169; Copyrights 2023</p>
+    <p>News Hub &#169; Copyrights 2023</p>
 </footer>
